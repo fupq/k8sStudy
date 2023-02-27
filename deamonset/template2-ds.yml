@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: DeammonSet
+metadata:
+  creationTimestamp: null
+  labels:
+    app: test-ds
+  name: test-ds
+spec:
+  selector:
+    matchLabels:
+      app: test-ds
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: test-ds
+    spec:
+      containers:
+      - image: nginx:alpine
+        name: nginx
+        resources: {}
+status: {}

@@ -1,0 +1,1 @@
+fupinxin 测试kubectl cp功能
