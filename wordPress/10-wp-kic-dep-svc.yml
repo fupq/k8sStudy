@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: wp-kic-dep
+  name: wp-kic-svc
+
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+    nodePort: 30089
+
+  selector:
+    app: wp-kic-dep
+  type: NodePort
