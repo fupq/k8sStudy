@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ngx-show-version-dep
+spec:
+  #minReadySeconds: 5
+
+  replicas: 4
+  selector:
+    matchLabels:
+      app: ngx-show-version-dep
+
+  template:
+    metadata:
+      labels:
+        app: ngx-show-version-dep
+    spec:
+      volumes:
+      - name: ngx-conf-vol
+        configMap:
+          name: ngx-show-version-cm
+
+      containers:
+      - image: nginx:1.21-alpine
+        name: nginx
+        ports:
+        - containerPort: 80
+
+        volumeMounts:
+        - mountPath: /etc/nginx/conf.d
+          name: ngx-conf-vol

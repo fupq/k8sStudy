@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ngx-show-version-cm
+
+data:
+  default.conf: |
+    server {
+      listen 80;
+      location / {
+        default_type text/plain;
+        return 200
+          'ver : $nginx_version\nsrv : $server_addr:$server_port\nhost: $hostname\n';
+      }
+    }
