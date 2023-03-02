@@ -2,8 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ngx-show-version-dep
+  annotations:
+    kubernetes.io/change-cause: v2, ngx=1.22
 spec:
-  minReadySeconds: 5
+  minReadySeconds: 25
 
   replicas: 4
   selector:

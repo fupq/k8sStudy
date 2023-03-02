@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ngx-show-version-dep
+  annotations:
+    kubernetes.io/change-cause: v1, ngx=1.21
 spec:
   #minReadySeconds: 5
 
