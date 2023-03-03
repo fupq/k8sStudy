@@ -1,0 +1,20 @@
+#LimitRange，简称是 limits，它能为 API 对象添加默认的资源配额限制
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: dev-limits
+  namespace: fpq-ns
+
+spec:
+  limits:
+  - type: Container
+    defaultRequest:
+      cpu: 100m
+      memory: 50Mi
+    default:
+      cpu: 200m
+      memory: 100Mi
+  - type: Pod
+    max:
+      cpu: 300m
+      memory: 200Mi

@@ -1,0 +1,26 @@
+#kubectl create quota dev-qt $out
+
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: dev-qt
+  namespace: fpq-ns
+
+spec:
+  hard:
+    requests.cpu: 100m
+    requests.memory: 100Mi
+    limits.cpu: 500m
+    limits.memory: 1Gi
+
+    requests.storage: 5Gi
+    persistentvolumeclaims: 30
+
+    pods: 30
+    configmaps: 30
+    secrets: 30
+    services: 3
+
+    count/jobs.batch: 2
+    count/cronjobs.batch: 2
+    count/deployments.apps: 5

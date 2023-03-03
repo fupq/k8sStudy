@@ -1,0 +1,6 @@
+#kubectl create ns fpq-ns
+#kubectl get ns
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: fpq-ns

@@ -1,0 +1,11 @@
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ngx-fpq-ns-pod
+  namespace: fpq-ns
+
+spec:
+  containers:
+  - image: nginx:alpine
+    name: ngx
