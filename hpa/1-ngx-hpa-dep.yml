@@ -1,0 +1,30 @@
+#HorizontalPodAutoscaler 的能力完全基于 Metrics Server，它从 Metrics Server 获取当前应用的运行指标，主要是 CPU 使用率，再依据预定的策略增加或者减少 Pod 的数量。
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ngx-hpa-dep
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ngx-hpa-dep
+
+  template:
+    metadata:
+      labels:
+        app: ngx-hpa-dep
+    spec:
+      containers:
+      - image: nginx:alpine
+        name: nginx
+        ports:
+        - containerPort: 80
+
+        resources:
+          requests:
+            cpu: 50m
+            memory: 10Mi
+          limits:
+            cpu: 100m
+            memory: 20Mi
