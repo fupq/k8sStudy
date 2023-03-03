@@ -26,4 +26,4 @@ docker tag $repo/$src_name $name
 docker rmi $repo/$src_name
 
 # add args: - --kubelet-insecure-tls
-kubectl apply -f components.yaml
+# kubectl apply -f components.yaml
