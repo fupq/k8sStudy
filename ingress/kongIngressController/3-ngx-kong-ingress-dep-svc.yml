@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  name: ngx-kong-ingress-dep-svc
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: ngx-kong-ingress-dep
+status:
+  loadBalancer: {}

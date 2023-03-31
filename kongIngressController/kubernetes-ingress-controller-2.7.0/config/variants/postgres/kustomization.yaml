@@ -1,0 +1,7 @@
+resources:
+- ../../base/
+- migration.yaml
+- postgres.yaml
+components:
+- ./wait/
+- ../../image/oss/

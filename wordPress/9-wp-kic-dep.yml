@@ -40,7 +40,7 @@ spec:
       serviceAccountName: nginx-ingress
 
       # use host network
-      #hostNetwork: true
+      hostNetwork: true
       dnsPolicy: ClusterFirstWithHostNet
 
       containers:

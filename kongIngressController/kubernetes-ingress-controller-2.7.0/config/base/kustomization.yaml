@@ -1,0 +1,16 @@
+namespace: kong
+resources:
+- namespace.yaml
+- ../crd
+- ../rbac
+- ../rbac/gateway
+- ../rbac/knative
+- ingressclass.yaml
+- secret-sa-token.yaml
+- service.yaml
+- serviceaccount.yaml
+- validation-service.yaml
+- kong-ingress-dbless.yaml
+
+components:
+  - ../image/oss

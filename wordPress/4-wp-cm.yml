@@ -4,7 +4,7 @@ metadata:
   name: wp-cm
 
 data:
-  HOST: 'maria-svc'
+  HOST: 'maria-sts-0.maria-svc'
   USER: 'wp'
   PASSWORD: '123456'
   NAME: 'db'
