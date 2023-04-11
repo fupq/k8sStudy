@@ -22,3 +22,6 @@ spec:
         name: hello-world-flask
         resources: {}
 status: {}
+
+  #使用 kubectl create service 命令创建 Service
+  #kubectl create service clusterip hello-world-flask --tcp=5000:5000
